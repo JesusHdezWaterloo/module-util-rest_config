@@ -10,6 +10,7 @@ import com.jhw.module.util.rest_config.core.domain.ConnectionTarget;
 import com.jhw.module.util.rest_config.core.module.RestConfigCoreModule;
 import com.jhw.module.util.rest_config.repo.module.RestConfigRepoModule;
 import com.jhw.module.util.rest_config.core.usecase_def.RestConfigUseCase;
+import java.time.Duration;
 import java.util.List;
 
 /**
@@ -39,4 +40,19 @@ public class RESTHandler {
         return REST_UC.actual();
     }
 
+    public static String urlActual() {
+        try {
+            return actual().url();
+        } catch (Exception e) {
+            return "";
+        }
+    }
+
+    public static Duration connectTimeOut() throws Exception {
+        return load().connectTimeOut();
+    }
+
+    public static Duration readTimeOut() throws Exception {
+        return load().readTimeOut();
+    }
 }
