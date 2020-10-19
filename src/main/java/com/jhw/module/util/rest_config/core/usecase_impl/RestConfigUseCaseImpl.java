@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import java.util.List;
 import com.jhw.module.util.rest_config.core.repo_def.RestConfigRepo;
 import com.jhw.module.util.rest_config.core.usecase_def.RestConfigUseCase;
+import org.springframework.web.client.RestTemplate;
 
 public class RestConfigUseCaseImpl extends DefaultReadWriteUseCase<Configuration> implements RestConfigUseCase {
 
@@ -34,4 +35,8 @@ public class RestConfigUseCaseImpl extends DefaultReadWriteUseCase<Configuration
         return read().actual();
     }
 
+    @Override
+    public RestTemplate restTemplate() throws Exception {//TODO
+        return new RestTemplate();
+    }
 }

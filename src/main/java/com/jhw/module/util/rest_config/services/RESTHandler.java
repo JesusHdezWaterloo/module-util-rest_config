@@ -12,6 +12,7 @@ import com.jhw.module.util.rest_config.repo.module.RestConfigRepoModule;
 import com.jhw.module.util.rest_config.core.usecase_def.RestConfigUseCase;
 import java.time.Duration;
 import java.util.List;
+import org.springframework.web.client.RestTemplate;
 
 /**
  *
@@ -45,6 +46,14 @@ public class RESTHandler {
             return actual().url();
         } catch (Exception e) {
             return "";
+        }
+    }
+
+    public static RestTemplate restTemplate() {
+        try {
+            return REST_UC.restTemplate();
+        } catch (Exception e) {
+            return null;
         }
     }
 
