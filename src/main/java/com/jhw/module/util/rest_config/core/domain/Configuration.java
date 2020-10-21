@@ -29,7 +29,9 @@ public class Configuration extends EntityDomainObjectValidated {
     }
 
     public ConnectionTarget actual() {
-        return list.get(actualConfig);
+        ConnectionTarget actual = list.get(actualConfig);
+        actual.validate();
+        return actual;
     }
 
     public List<ConnectionTarget> getList() {
