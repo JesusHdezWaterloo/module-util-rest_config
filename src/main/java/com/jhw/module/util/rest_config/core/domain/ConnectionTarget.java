@@ -5,7 +5,9 @@
  */
 package com.jhw.module.util.rest_config.core.domain;
 
+import com.jhw.module.util.rest_config.core.utils.Ipv4;
 import com.jhw.utils.clean.EntityDomainObjectValidated;
+import javax.validation.constraints.NotEmpty;
 
 /**
  *
@@ -13,9 +15,15 @@ import com.jhw.utils.clean.EntityDomainObjectValidated;
  */
 public class ConnectionTarget extends EntityDomainObjectValidated {
 
+    @Ipv4(message = "#msg.module.util.rest_config.validation.connection_target_ip_ipv4#")
     private String ip;
+
+    @NotEmpty(message = "#msg.module.util.rest_config.validation.connection_target_port_empty#")
     private String port;
+
+    @NotEmpty(message = "#msg.module.util.rest_config.validation.connection_target_name_empty#")
     private String name;
+
     private String description;
 
     public ConnectionTarget() {
