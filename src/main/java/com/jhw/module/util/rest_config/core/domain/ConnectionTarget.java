@@ -45,11 +45,11 @@ public class ConnectionTarget extends EntityDomainObjectValidated {
     }
 
     public String urlREST() {
-        return clearURL("http://" + ip + ":" + portRest + "/" + contextPath + "/");
+        return "http://" + clearURL(ip + ":" + portRest + contextPath);
     }
 
     public String urlApache() {
-        return clearURL("http://" + ip + ":" + portApache /*+ "/" + contextPath + "/"*/);
+        return "http://" + clearURL(ip + ":" + portApache /*+ "/" + contextPath + "/"*/);
     }
 
     private String clearURL(String url) {
