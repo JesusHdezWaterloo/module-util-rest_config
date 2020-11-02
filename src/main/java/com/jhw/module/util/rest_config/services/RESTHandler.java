@@ -41,9 +41,17 @@ public class RESTHandler {
         return REST_UC.actual();
     }
 
-    public static String urlActual() {
+    public static String urlActualREST() {
         try {
-            return actual().url();
+            return actual().urlREST();
+        } catch (Exception e) {
+            return "";
+        }
+    }
+
+    public static String urlActualApache() {
+        try {
+            return actual().urlApache();
         } catch (Exception e) {
             return "";
         }
