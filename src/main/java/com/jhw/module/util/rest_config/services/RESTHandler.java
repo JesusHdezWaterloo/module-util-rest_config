@@ -43,7 +43,7 @@ public class RESTHandler {
 
     public static String urlActual() {
         try {
-            return actual().url();
+            return actual().urlREST();
         } catch (Exception e) {
             return "";
         }
