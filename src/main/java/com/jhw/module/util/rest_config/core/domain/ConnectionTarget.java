@@ -18,27 +18,42 @@ public class ConnectionTarget extends EntityDomainObjectValidated {
     @Ipv4(message = "#msg.module.util.rest_config.validation.connection_target_ip_ipv4#")
     private String ip;
 
-    @NotEmpty(message = "#msg.module.util.rest_config.validation.connection_target_port_empty#")
-    private String port;
+    @NotEmpty(message = "#msg.module.util.rest_config.validation.connection_target_port_rest_empty#")
+    private String portRest;
+
+    @NotEmpty(message = "#msg.module.util.rest_config.validation.connection_target_port_apache_empty#")
+    private String portApache;
 
     @NotEmpty(message = "#msg.module.util.rest_config.validation.connection_target_name_empty#")
     private String name;
+
+    private String contextPath;
 
     private String description;
 
     public ConnectionTarget() {
     }
 
-    public ConnectionTarget(String ip, String port, String name, String description) {
+    public ConnectionTarget(String ip, String portRest, String portApache, String name, String contextPath, String description) {
         this.ip = ip;
-        this.port = port;
+        this.portRest = portRest;
+        this.portApache = portApache;
         this.name = name;
+        this.contextPath = contextPath;
         this.description = description;
         validate();
     }
 
-    public String url() {
-        return "http://" + ip + ":" + port;
+    public String urlREST() {
+        return "http://" + clearURL(ip + ":" + portRest + contextPath);
+    }
+
+    public String urlApache() {
+        return "http://" + clearURL(ip + ":" + portApache /*+ "/" + contextPath + "/"*/);
+    }
+
+    private String clearURL(String url) {
+        return url.trim().replace("//", "/");
     }
 
     public String getIp() {
@@ -49,12 +64,20 @@ public class ConnectionTarget extends EntityDomainObjectValidated {
         this.ip = ip;
     }
 
-    public String getPort() {
-        return port;
+    public String getPortRest() {
+        return portRest;
     }
 
-    public void setPort(String port) {
-        this.port = port;
+    public void setPortRest(String portRest) {
+        this.portRest = portRest;
+    }
+
+    public String getPortApache() {
+        return portApache;
+    }
+
+    public void setPortApache(String portApache) {
+        this.portApache = portApache;
     }
 
     public String getName() {
@@ -63,6 +86,14 @@ public class ConnectionTarget extends EntityDomainObjectValidated {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getContextPath() {
+        return contextPath;
+    }
+
+    public void setContextPath(String contextPath) {
+        this.contextPath = contextPath;
     }
 
     public String getDescription() {
@@ -75,7 +106,7 @@ public class ConnectionTarget extends EntityDomainObjectValidated {
 
     @Override
     public String toString() {
-        return url();
+        return urlREST();
     }
 
 }

@@ -17,7 +17,7 @@ public class Configuration extends EntityDomainObjectValidated {
     private long readTimeOutMillis = 3 * 1000;
 
     public Configuration() {
-        list.add(new ConnectionTarget("localhost", "8080", "local", "develop rest server"));
+        list.add(new ConnectionTarget("localhost", "7777", "7780", "local", "", "develop rest server"));
     }
 
     public Duration connectTimeOut() {
