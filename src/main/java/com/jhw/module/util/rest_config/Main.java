@@ -5,8 +5,10 @@
  */
 package com.jhw.module.util.rest_config;
 
+import com.clean.core.app.services.ExceptionHandler;
 import com.jhw.module.util.rest_config.services.RESTHandler;
 import com.jhw.module.util.rest_config.ui.module.RestConfigSwingModule;
+import org.springframework.web.client.RestTemplate;
 
 /**
  *
@@ -19,7 +21,11 @@ public class Main {
      */
     public static void main(String[] args) throws Exception {
         RestConfigSwingModule.init();
-        System.out.println(RESTHandler.conections());
+        try {
+            new RestTemplate().getForObject("http://localhost:8080/gasto/tipo_gastos/find_all", String.class);
+        } catch (Exception e) {
+            ExceptionHandler.handleException(e);
+        }
     }
 
 }
