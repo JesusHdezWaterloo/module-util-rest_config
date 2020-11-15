@@ -3,6 +3,7 @@ package com.jhw.module.util.rest_config.ui.module;
 import com.clean.core.app.services.ExceptionHandler;
 import com.clean.swing.app.AbstractSwingApplication;
 import com.clean.swing.app.DefaultAbstractSwingMainModule;
+import com.jhw.module.util.rest_config.services.RESTExceptionHandler;
 import com.jhw.module.util.rest_config.services.RestConfigResourceService;
 
 public class RestConfigSwingModule extends DefaultAbstractSwingMainModule {
@@ -14,6 +15,7 @@ public class RestConfigSwingModule extends DefaultAbstractSwingMainModule {
 
     public static RestConfigSwingModule init() {
         System.out.println("Iniciando 'Configuracion REST'");
+        RESTExceptionHandler.init();
         try {
             RestConfigResourceService.init();
         } catch (Exception e) {
