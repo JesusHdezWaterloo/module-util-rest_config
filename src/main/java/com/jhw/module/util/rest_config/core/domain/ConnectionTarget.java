@@ -8,6 +8,7 @@ package com.jhw.module.util.rest_config.core.domain;
 import com.jhw.module.util.rest_config.core.utils.Ipv4;
 import com.jhw.utils.clean.EntityDomainObjectValidated;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Positive;
 
 /**
  *
@@ -18,11 +19,11 @@ public class ConnectionTarget extends EntityDomainObjectValidated {
     @Ipv4(message = "#msg.module.util.rest_config.validation.connection_target_ip_ipv4#")
     private String ip;
 
-    @NotEmpty(message = "#msg.module.util.rest_config.validation.connection_target_port_rest_empty#")
-    private String portRest;
+    @Positive(message = "#msg.module.util.rest_config.validation.connection_target_port_rest_empty#")
+    private int portRest;
 
-    @NotEmpty(message = "#msg.module.util.rest_config.validation.connection_target_port_apache_empty#")
-    private String portApache;
+    @Positive(message = "#msg.module.util.rest_config.validation.connection_target_port_apache_empty#")
+    private int portApache;
 
     @NotEmpty(message = "#msg.module.util.rest_config.validation.connection_target_name_empty#")
     private String name;
@@ -34,7 +35,7 @@ public class ConnectionTarget extends EntityDomainObjectValidated {
     public ConnectionTarget() {
     }
 
-    public ConnectionTarget(String ip, String portRest, String portApache, String name, String contextPath, String description) {
+    public ConnectionTarget(String ip, int portRest, int portApache, String name, String contextPath, String description) {
         this.ip = ip;
         this.portRest = portRest;
         this.portApache = portApache;
@@ -64,19 +65,19 @@ public class ConnectionTarget extends EntityDomainObjectValidated {
         this.ip = ip;
     }
 
-    public String getPortRest() {
+    public int getPortRest() {
         return portRest;
     }
 
-    public void setPortRest(String portRest) {
+    public void setPortRest(int portRest) {
         this.portRest = portRest;
     }
 
-    public String getPortApache() {
+    public int getPortApache() {
         return portApache;
     }
 
-    public void setPortApache(String portApache) {
+    public void setPortApache(int portApache) {
         this.portApache = portApache;
     }
 
