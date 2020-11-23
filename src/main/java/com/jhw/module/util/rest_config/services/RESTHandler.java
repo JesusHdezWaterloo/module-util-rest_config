@@ -10,6 +10,7 @@ import com.jhw.module.util.rest_config.core.domain.ConnectionTarget;
 import com.jhw.module.util.rest_config.core.module.RestConfigCoreModule;
 import com.jhw.module.util.rest_config.repo.module.RestConfigRepoModule;
 import com.jhw.module.util.rest_config.core.usecase_def.RestConfigUseCase;
+import com.jhw.utils.others.Red;
 import java.time.Duration;
 import java.util.List;
 import org.springframework.web.client.RestTemplate;
@@ -39,6 +40,18 @@ public class RESTHandler {
 
     public static ConnectionTarget actual() throws Exception {
         return REST_UC.actual();
+    }
+
+    public static boolean isConnected() {
+        return REST_UC.isConnected();
+    }
+
+    public static long pingEveryMillis() {
+        try {
+            return load().getConnectionPingEveryMillis();
+        } catch (Exception e) {
+            return 1 * 1000;
+        }
     }
 
     public static String urlActualREST() {

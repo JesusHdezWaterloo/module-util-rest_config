@@ -3,8 +3,13 @@ package com.jhw.module.util.rest_config.ui.module;
 import com.clean.core.app.services.ExceptionHandler;
 import com.clean.swing.app.AbstractSwingApplication;
 import com.clean.swing.app.DefaultAbstractSwingMainModule;
+import com.clean.swing.app.dashboard.DashBoardSimple;
+import com.clean.swing.app.dashboard.DashboardConstants;
 import com.jhw.module.util.rest_config.services.RESTExceptionHandler;
 import com.jhw.module.util.rest_config.services.RestConfigResourceService;
+import com.jhw.module.util.rest_config.ui.connection.ConnectionComponent;
+import com.jhw.swing.material.standards.MaterialIcons;
+import com.jhw.swing.util.AbstractActionUtils;
 
 public class RestConfigSwingModule extends DefaultAbstractSwingMainModule {
 
@@ -26,6 +31,9 @@ public class RestConfigSwingModule extends DefaultAbstractSwingMainModule {
 
     @Override
     public void register(AbstractSwingApplication app) {
+        DashBoardSimple dash = app.rootView().dashboard();
+
+        dash.addKeyValue(DashboardConstants.DOWN_ELEMENT, ConnectionComponent.fromComponent(), 0);
     }
 
     @Override
