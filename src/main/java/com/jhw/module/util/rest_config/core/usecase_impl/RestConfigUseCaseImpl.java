@@ -10,6 +10,7 @@ import java.util.List;
 import com.jhw.module.util.rest_config.core.repo_def.RestConfigRepo;
 import com.jhw.module.util.rest_config.core.usecase_def.RestConfigUseCase;
 import com.jhw.utils.jackson.JACKSON;
+import com.jhw.utils.others.Red;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 
@@ -60,6 +61,16 @@ public class RestConfigUseCaseImpl extends DefaultReadWriteUseCase<Configuration
 
         return rt;
     }
+
+    @Override
+    public boolean isConnected() {
+        try {
+            return Red.isRunning(actual().getIp(), actual().getPortRest());
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
     /*@Override
     public RestTemplate restTemplate() throws Exception {//TODO
         return new RestTemplate();

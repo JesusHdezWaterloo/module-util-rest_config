@@ -19,4 +19,7 @@ public interface RestConfigUseCase extends ReadWriteUseCase<Configuration> {
     public ConnectionTarget actual() throws Exception;
 
     public RestTemplate restTemplate() throws Exception;
+
+    public boolean isConnected();
+
 }

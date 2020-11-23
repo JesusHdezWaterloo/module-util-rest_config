@@ -15,9 +15,10 @@ public class Configuration extends EntityDomainObjectValidated {
     private int actualConfig = 0;
     private long connectTimeOutMillis = 3 * 1000;
     private long readTimeOutMillis = 3 * 1000;
+    private long connectionPingEveryMillis = 1 * 1000;
 
     public Configuration() {
-        list.add(new ConnectionTarget("localhost", "7777", "7780", "local", "", "develop rest server"));
+        list.add(new ConnectionTarget("localhost", 7777, 7780, "local", "", "develop rest server"));
     }
 
     public Duration connectTimeOut() {
@@ -32,6 +33,14 @@ public class Configuration extends EntityDomainObjectValidated {
         ConnectionTarget actual = list.get(actualConfig);
         actual.validate();
         return actual;
+    }
+
+    public long getConnectionPingEveryMillis() {
+        return connectionPingEveryMillis;
+    }
+
+    public void setConnectionPingEveryMillis(long connectionPingEveryMillis) {
+        this.connectionPingEveryMillis = connectionPingEveryMillis;
     }
 
     public List<ConnectionTarget> getList() {
