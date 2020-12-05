@@ -9,7 +9,7 @@ import com.jhw.module.util.rest_config.core.usecase_def.RestConfigUseCase;
  *
  * @author Jesus Hernandez Barrios (jhernandezb96@gmail.com)
  */
-public class InjectionConfigRestConfigCore extends AbstractModule {
+public class RestConfigCoreInjectionConfig extends AbstractModule {
 
     @Override
     protected void configure() {

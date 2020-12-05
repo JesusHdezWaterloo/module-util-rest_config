@@ -8,9 +8,7 @@ package com.jhw.module.util.rest_config.services;
 import com.jhw.module.util.rest_config.core.domain.Configuration;
 import com.jhw.module.util.rest_config.core.domain.ConnectionTarget;
 import com.jhw.module.util.rest_config.core.module.RestConfigCoreModule;
-import com.jhw.module.util.rest_config.repo.module.RestConfigRepoModule;
 import com.jhw.module.util.rest_config.core.usecase_def.RestConfigUseCase;
-import com.jhw.utils.others.Red;
 import java.time.Duration;
 import java.util.List;
 import org.springframework.web.client.RestTemplate;
@@ -21,7 +19,7 @@ import org.springframework.web.client.RestTemplate;
  */
 public class RESTHandler {
 
-    private static RestConfigUseCase REST_UC = RestConfigCoreModule.init(RestConfigRepoModule.init()).getImplementation(RestConfigUseCase.class);
+    private static RestConfigUseCase REST_UC = RestConfigCoreModule.init().getImplementation(RestConfigUseCase.class);
 
     private RESTHandler() {
     }

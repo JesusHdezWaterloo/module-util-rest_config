@@ -9,7 +9,7 @@ import com.jhw.module.util.rest_config.core.repo_def.RestConfigRepo;
  *
  * @author Jesus Hernandez Barrios (jhernandezb96@gmail.com)
  */
-public class InjectionConfigRestConfigRepo extends AbstractModule {
+public class RestConfigRepoInjectionConfig extends AbstractModule {
 
     @Override
     protected void configure() {

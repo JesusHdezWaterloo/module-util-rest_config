@@ -4,6 +4,7 @@ import com.clean.core.app.modules.AbstractModule;
 import com.clean.core.app.modules.DefaultAbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
+import com.jhw.module.util.rest_config.repo.module.RestConfigRepoModule;
 
 /**
  * Modulo de licencia-core.
@@ -12,7 +13,7 @@ import com.google.inject.Injector;
  */
 public class RestConfigCoreModule extends DefaultAbstractModule {
 
-    private final Injector inj = Guice.createInjector(new InjectionConfigRestConfigCore());
+    private final Injector inj = Guice.createInjector(new RestConfigCoreInjectionConfig());
 
     private static RestConfigCoreModule INSTANCE;
 
@@ -23,6 +24,23 @@ public class RestConfigCoreModule extends DefaultAbstractModule {
         return INSTANCE;
     }
 
+    public static RestConfigCoreModule init() {
+        if (INSTANCE != null) {
+            return INSTANCE;
+        }
+        INSTANCE = new RestConfigCoreModule();
+        INSTANCE.registerModule(RestConfigRepoModule.init());
+        return getInstance();
+    }
+
+    /**
+     * Usar init() sin repo por parametro para usar el repo por defecto
+     *
+     * @param repoModule
+     * @return
+     * @deprecated
+     */
+    @Deprecated
     public static RestConfigCoreModule init(AbstractModule repoModule) {
         INSTANCE = new RestConfigCoreModule();
         INSTANCE.registerModule(repoModule);
