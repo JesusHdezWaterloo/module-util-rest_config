@@ -11,7 +11,7 @@ import com.google.inject.Injector;
  */
 public class RestConfigRepoModule extends DefaultAbstractModule {
 
-    private final Injector inj = Guice.createInjector(new InjectionConfigRestConfigRepo());
+    private final Injector inj = Guice.createInjector(new RestConfigRepoInjectionConfig());
 
     private static RestConfigRepoModule INSTANCE;
 
