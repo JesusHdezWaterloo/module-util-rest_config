@@ -17,6 +17,8 @@ public class Configuration extends EntityDomainObjectValidated {
     private long readTimeOutMillis = 3 * 1000;
     private long connectionPingEveryMillis = 1 * 1000;
 
+    private String oauth2TokenURL = "http://localhost:8080/oauth/token";
+
     public Configuration() {
         list.add(new ConnectionTarget("localhost", 7777, 7780, "local", "", "develop rest server"));
     }
@@ -33,6 +35,14 @@ public class Configuration extends EntityDomainObjectValidated {
         ConnectionTarget actual = list.get(actualConfig);
         actual.validate();
         return actual;
+    }
+
+    public String getOauth2TokenURL() {
+        return oauth2TokenURL;
+    }
+
+    public void setOauth2TokenURL(String oauth2TokenURL) {
+        this.oauth2TokenURL = oauth2TokenURL;
     }
 
     public long getConnectionPingEveryMillis() {
