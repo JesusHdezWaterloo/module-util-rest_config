@@ -86,6 +86,10 @@ public class RESTHandler {
         }
     }
 
+    public static boolean login(String user, String pass) {
+        return REST_UC.login(user, pass);
+    }
+
     public static boolean login(String user, String pass, Map<String, Object> args) {
         return REST_UC.login(user, pass, args);
     }
