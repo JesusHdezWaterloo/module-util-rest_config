@@ -5,11 +5,10 @@ import com.clean.swing.app.AbstractSwingApplication;
 import com.clean.swing.app.DefaultAbstractSwingMainModule;
 import com.clean.swing.app.dashboard.DashBoardSimple;
 import com.clean.swing.app.dashboard.DashboardConstants;
+import com.jhw.module.util.rest_config.services.AuthenticationService;
 import com.jhw.module.util.rest_config.services.RESTExceptionHandler;
 import com.jhw.module.util.rest_config.services.RestConfigResourceService;
 import com.jhw.module.util.rest_config.ui.connection.ConnectionComponent;
-import com.jhw.swing.material.standards.MaterialIcons;
-import com.jhw.swing.util.AbstractActionUtils;
 
 public class RestConfigSwingModule extends DefaultAbstractSwingMainModule {
 
@@ -21,6 +20,7 @@ public class RestConfigSwingModule extends DefaultAbstractSwingMainModule {
     public static RestConfigSwingModule init() {
         System.out.println("Iniciando 'Configuracion REST'");
         RESTExceptionHandler.init();
+        AuthenticationService.init();
         try {
             RestConfigResourceService.init();
         } catch (Exception e) {

@@ -11,7 +11,9 @@ import com.jhw.module.util.rest_config.core.module.RestConfigCoreModule;
 import com.jhw.module.util.rest_config.core.usecase_def.RestConfigUseCase;
 import java.time.Duration;
 import java.util.List;
-import org.springframework.web.client.RestTemplate;
+import java.util.Map;
+import org.springframework.security.oauth2.client.OAuth2RestOperations;
+import org.springframework.web.client.RestOperations;
 
 /**
  *
@@ -68,12 +70,28 @@ public class RESTHandler {
         }
     }
 
-    public static RestTemplate restTemplate() {
+    public static RestOperations restTemplate() {
         try {
             return REST_UC.restTemplate();
         } catch (Exception e) {
             return null;
         }
+    }
+
+    public static OAuth2RestOperations OAuth2RestTemplate() {
+        try {
+            return REST_UC.OAuth2RestTemplate();
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    public static boolean login(String user, String pass) {
+        return REST_UC.login(user, pass);
+    }
+
+    public static boolean login(String user, String pass, Map<String, Object> args) {
+        return REST_UC.login(user, pass, args);
     }
 
     public static Duration connectTimeOut() throws Exception {
