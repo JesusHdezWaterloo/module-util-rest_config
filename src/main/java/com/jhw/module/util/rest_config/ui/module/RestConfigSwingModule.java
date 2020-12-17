@@ -5,9 +5,9 @@ import com.clean.swing.app.AbstractSwingApplication;
 import com.clean.swing.app.DefaultAbstractSwingMainModule;
 import com.clean.swing.app.dashboard.DashBoardSimple;
 import com.clean.swing.app.dashboard.DashboardConstants;
-import com.jhw.module.util.rest_config.services.AuthenticationService;
+import com.jhw.module.util.rest_config.services.RestConfigAuthenticationServiceImplementation;
 import com.jhw.module.util.rest_config.services.RESTExceptionHandler;
-import com.jhw.module.util.rest_config.services.RestConfigResourceService;
+import com.jhw.module.util.rest_config.services.RestConfigResourceServiceImplementation;
 import com.jhw.module.util.rest_config.ui.connection.ConnectionComponent;
 
 public class RestConfigSwingModule extends DefaultAbstractSwingMainModule {
@@ -20,9 +20,9 @@ public class RestConfigSwingModule extends DefaultAbstractSwingMainModule {
     public static RestConfigSwingModule init() {
         System.out.println("Iniciando 'Configuracion REST'");
         RESTExceptionHandler.init();
-        AuthenticationService.init();
+        RestConfigAuthenticationServiceImplementation.init();
         try {
-            RestConfigResourceService.init();
+            RestConfigResourceServiceImplementation.init();
         } catch (Exception e) {
             ExceptionHandler.handleException(e);
         }

@@ -10,19 +10,19 @@ import java.net.MalformedURLException;
  *
  * @author Jesus Hernandez Barrios (jhernandezb96@gmail.com)
  */
-public class RestConfigResourceService implements ResourceService {
+public class RestConfigResourceServiceImplementation implements ResourceService {
 
     public static final String RESOURCE_URL = "rest_config";
 
     private final DefaultResourceBundleService resourceService;
 
-    public static RestConfigResourceService init() throws MalformedURLException {
-        RestConfigResourceService res = new RestConfigResourceService();
+    public static RestConfigResourceServiceImplementation init() throws MalformedURLException {
+        RestConfigResourceServiceImplementation res = new RestConfigResourceServiceImplementation();
         Resource.registerResourceService(res);
         return res;
     }
 
-    private RestConfigResourceService() throws MalformedURLException {
+    private RestConfigResourceServiceImplementation() throws MalformedURLException {
         resourceService = new DefaultResourceBundleService(
                 ResourceBundleUtils.fromInternalFile(RESOURCE_URL,
                         ResourceBundleUtils.SPANISH));
