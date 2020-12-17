@@ -4,6 +4,7 @@ import com.clean.core.app.usecase.ReadWriteUseCase;
 import com.jhw.module.util.rest_config.core.domain.Configuration;
 import com.jhw.module.util.rest_config.core.domain.ConnectionTarget;
 import java.util.List;
+import java.util.Map;
 import org.springframework.security.oauth2.client.OAuth2RestOperations;
 import org.springframework.web.client.RestOperations;
 
@@ -14,6 +15,8 @@ import org.springframework.web.client.RestOperations;
  * @author Jesus Hernandez Barrios (jhernandezb96@gmail.com)
  */
 public interface RestConfigUseCase extends ReadWriteUseCase<Configuration> {
+
+    public boolean login(String user, String pass, Map<String, Object> args);
 
     public List<ConnectionTarget> conections() throws Exception;
 

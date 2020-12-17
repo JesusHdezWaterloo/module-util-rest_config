@@ -10,6 +10,7 @@ import com.jhw.module.util.rest_config.core.repo_def.RestConfigRepo;
 import com.jhw.module.util.rest_config.core.usecase_def.RestConfigUseCase;
 import com.jhw.module.util.rest_config.core.utils.OAuth2RestOperationsFactory;
 import com.jhw.utils.others.Red;
+import java.util.Map;
 import org.springframework.security.oauth2.client.OAuth2RestOperations;
 import org.springframework.web.client.RestOperations;
 
@@ -29,7 +30,6 @@ public class RestConfigUseCaseImpl extends DefaultReadWriteUseCase<Configuration
     public RestConfigUseCaseImpl() {
         super.setRepo(repo);
         template = RestOperationsFactory.from(this).build();
-        //oauth2Template = OAuth2RestOperationsFactory.from(this).build();
     }
 
     @Override
@@ -50,6 +50,16 @@ public class RestConfigUseCaseImpl extends DefaultReadWriteUseCase<Configuration
     @Override
     public OAuth2RestOperations OAuth2RestTemplate() {
         return oauth2Template;
+    }
+
+    @Override
+    public boolean login(String user, String pass, Map<String, Object> args) {
+        try {
+            oauth2Template = OAuth2RestOperationsFactory.from(this).build(user, pass);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     @Override
