@@ -5,7 +5,10 @@
  */
 package com.jhw.module.util.rest_config.core.utils;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jhw.module.util.rest_config.core.usecase_def.RestConfigUseCase;
+import com.jhw.utils.jackson.JACKSON;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.security.oauth2.client.DefaultOAuth2ClientContext;
 import org.springframework.security.oauth2.client.OAuth2RestOperations;
 import org.springframework.security.oauth2.client.OAuth2RestTemplate;
@@ -13,6 +16,7 @@ import org.springframework.security.oauth2.client.resource.OAuth2ProtectedResour
 import org.springframework.security.oauth2.client.token.AccessTokenRequest;
 import org.springframework.security.oauth2.client.token.DefaultAccessTokenRequest;
 import org.springframework.security.oauth2.client.token.grant.password.ResourceOwnerPasswordResourceDetails;
+import org.springframework.web.client.RestTemplate;
 
 /**
  *
@@ -33,7 +37,19 @@ public class OAuth2RestOperationsFactory {
     public OAuth2RestOperations build(String username, String password) throws Exception {
         AccessTokenRequest accessTokenRequest = new DefaultAccessTokenRequest();
         OAuth2ProtectedResourceDetails resource = resource(username, password);
-        return new OAuth2RestTemplate(resource, new DefaultOAuth2ClientContext(accessTokenRequest));
+        OAuth2RestTemplate rt = new OAuth2RestTemplate(resource, new DefaultOAuth2ClientContext(accessTokenRequest));
+
+        ObjectMapper om = new ObjectMapper();
+        JACKSON.configureObjectMapper(om);
+
+        MappingJackson2HttpMessageConverter messageConverter = new MappingJackson2HttpMessageConverter();
+        messageConverter.setPrettyPrint(true);
+        messageConverter.setObjectMapper(om);
+
+        rt.getMessageConverters().removeIf(m -> m.getClass().isAssignableFrom(MappingJackson2HttpMessageConverter.class));
+        rt.getMessageConverters().add(messageConverter);
+
+        return rt;
     }
 
     private OAuth2ProtectedResourceDetails resource(String username, String password) throws Exception {
