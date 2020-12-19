@@ -21,9 +21,10 @@ public class Main {
      */
     public static void main(String[] args) throws Exception {
         RestConfigAuthenticationServiceImplementation.init();
-        System.out.println((boolean) AuthenticationHandler.login("admin", "admin"));
-
         Scanner in = new Scanner(System.in);
+        System.out.println("GOGOGOGOGOGO");
+        System.out.println((boolean) AuthenticationHandler.login(in.next(), in.next()));
+        System.out.println("ENDPOINT GO");
         while (in.hasNext()) {
             System.out.println("");
             String endpoint = in.next();
@@ -33,7 +34,7 @@ public class Main {
                 System.out.println(RESTHandler.OAuth2RestTemplate().getAccessToken());
                 continue;
             }
-            System.out.println(RESTHandler.OAuth2RestTemplate().getForObject("http://localhost:8080/test/" + endpoint, String.class));
+            System.out.println(RESTHandler.OAuth2RestTemplate().getForObject("http://localhost:8080/" + endpoint, String.class));
             System.out.println("");
         }
 
