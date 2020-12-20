@@ -3,12 +3,15 @@ package com.jhw.module.util.rest_config.ui.module;
 import com.clean.core.app.services.ExceptionHandler;
 import com.clean.swing.app.AbstractSwingApplication;
 import com.clean.swing.app.DefaultAbstractSwingMainModule;
+import com.clean.swing.app.RootView;
 import com.clean.swing.app.dashboard.DashBoardSimple;
 import com.clean.swing.app.dashboard.DashboardConstants;
-import com.jhw.module.util.rest_config.services.RestConfigAuthenticationServiceImplementation;
 import com.jhw.module.util.rest_config.services.RESTExceptionHandler;
 import com.jhw.module.util.rest_config.services.RestConfigResourceServiceImplementation;
 import com.jhw.module.util.rest_config.ui.connection.ConnectionComponent;
+import com.jhw.swing.material.standards.MaterialIcons;
+import java.awt.event.ActionEvent;
+import javax.swing.AbstractAction;
 
 public class RestConfigSwingModule extends DefaultAbstractSwingMainModule {
 
@@ -20,7 +23,6 @@ public class RestConfigSwingModule extends DefaultAbstractSwingMainModule {
     public static RestConfigSwingModule init() {
         System.out.println("Iniciando 'Configuracion REST'");
         RESTExceptionHandler.init();
-        RestConfigAuthenticationServiceImplementation.init();
         try {
             RestConfigResourceServiceImplementation.init();
         } catch (Exception e) {

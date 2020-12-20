@@ -7,7 +7,6 @@ package com.jhw.module.util.rest_config;
 
 import com.clean.core.app.services.AuthenticationHandler;
 import com.jhw.module.util.rest_config.services.RESTHandler;
-import com.jhw.module.util.rest_config.services.RestConfigAuthenticationServiceImplementation;
 import java.util.Scanner;
 
 /**
@@ -20,7 +19,6 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws Exception {
-        RestConfigAuthenticationServiceImplementation.init();
         Scanner in = new Scanner(System.in);
         System.out.println("GOGOGOGOGOGO");
         System.out.println((boolean) AuthenticationHandler.login(in.next(), in.next()));
