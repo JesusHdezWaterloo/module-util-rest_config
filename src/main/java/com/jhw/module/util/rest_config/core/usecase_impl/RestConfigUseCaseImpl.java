@@ -64,6 +64,16 @@ public class RestConfigUseCaseImpl extends DefaultReadWriteUseCase<Configuration
     }
 
     @Override
+    public boolean logout() {
+        try {
+            oauth2Template = null;
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    @Override
     public boolean isConnected() {
         try {
             return Red.isRunning(actual().getIp(), actual().getPortRest());

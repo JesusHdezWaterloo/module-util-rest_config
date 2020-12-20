@@ -94,6 +94,10 @@ public class RESTHandler {
         return REST_UC.login(user, pass, args);
     }
 
+    public static boolean logout() {
+        return REST_UC.logout();
+    }
+
     public static Duration connectTimeOut() throws Exception {
         return load().connectTimeOut();
     }

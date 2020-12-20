@@ -23,6 +23,8 @@ public interface RestConfigUseCase extends ReadWriteUseCase<Configuration> {
 
     public boolean login(String user, String pass, Map<String, Object> args);
 
+    public boolean logout();
+
     public List<ConnectionTarget> conections() throws Exception;
 
     public ConnectionTarget actual() throws Exception;
