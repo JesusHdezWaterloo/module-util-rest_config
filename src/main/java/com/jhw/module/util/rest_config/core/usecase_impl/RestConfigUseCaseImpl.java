@@ -56,6 +56,17 @@ public class RestConfigUseCaseImpl extends DefaultReadWriteUseCase<Configuration
     public boolean login(String user, String pass, Map<String, Object> args) {
         try {
             oauth2Template = OAuth2RestOperationsFactory.from(this).build(user, pass);
+            System.out.println(oauth2Template.getAccessToken());
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    @Override
+    public boolean logout() {
+        try {
+            oauth2Template = null;
             return true;
         } catch (Exception e) {
             return false;
