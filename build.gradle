@@ -2,9 +2,9 @@ plugins {
     id 'java'
 }
 
-group = 'com.jhw.module.util'
+group = 'com.root101.module.util'
 
-version = '1.6.0.SNAPSHOT.20201229'
+version = '1.9.9.SNAPSHOT.20210108'
 
 repositories {
     jcenter()
@@ -23,7 +23,7 @@ dependencies {
     testCompile 'junit:junit:4.13'
     
     implementation project(':utils-core')
-    implementation project(':clean-core-full')
+    implementation project(':clean-core')
     implementation project(':clean-swing')
     
     implementation project(':swing-derivable_icons')
@@ -34,7 +34,6 @@ dependencies {
     implementation project(':swing-material-notifications')
     
     compile group: 'com.google.inject', name: 'guice', version: '4.2.3'
-    compile group: 'javax.inject', name: 'javax.inject', version: '1'
     
     compile group: 'commons-validator', name: 'commons-validator', version: '1.7'
 }
