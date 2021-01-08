@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.jhw.module.util.rest_config.ui.connection;
+package com.root101.module.util.rest_config.ui.connection;
 
-import com.jhw.module.util.rest_config.services.RESTHandler;
+import com.root101.module.util.rest_config.services.RESTHandler;
 import com.root101.swing.material.components.container.panel.MaterialPanelBorder;
 import com.root101.swing.material.components.container.panel._MaterialPanelComponent;
 import com.root101.swing.material.components.container.panel._PanelGradient;

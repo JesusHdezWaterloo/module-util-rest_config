@@ -1,4 +1,4 @@
-package com.jhw.module.util.rest_config.ui.module;
+package com.root101.module.util.rest_config.ui.module;
 
 import com.root101.clean.core.app.services.NavigationService;
 

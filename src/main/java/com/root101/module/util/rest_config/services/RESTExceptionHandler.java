@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.jhw.module.util.rest_config.services;
+package com.root101.module.util.rest_config.services;
 
 import com.root101.clean.core.app.services.ExceptionHandler;
 import com.root101.clean.core.app.services.ExceptionHandlerServiceFunctional;

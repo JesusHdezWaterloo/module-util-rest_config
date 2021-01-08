@@ -1,4 +1,4 @@
-package com.jhw.module.util.rest_config.repo.module;
+package com.root101.module.util.rest_config.repo.module;
 
 import com.root101.clean.core.app.modules.DefaultAbstractModule;
 import com.google.inject.Guice;

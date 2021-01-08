@@ -1,8 +1,8 @@
-package com.jhw.module.util.rest_config.repo.module;
+package com.root101.module.util.rest_config.repo.module;
 
-import com.jhw.module.util.rest_config.repo.repo_impl.RestConfigRepoImpl;
+import com.root101.module.util.rest_config.repo.repo_impl.RestConfigRepoImpl;
 import com.google.inject.AbstractModule;
-import com.jhw.module.util.rest_config.core.repo_def.RestConfigRepo;
+import com.root101.module.util.rest_config.core.repo_def.RestConfigRepo;
 
 /**
  * Configuracion del injection del modulo de licencia-repo.

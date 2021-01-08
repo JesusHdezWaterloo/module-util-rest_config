@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.jhw.module.util.rest_config.services;
+package com.root101.module.util.rest_config.services;
 
-import com.jhw.module.util.rest_config.core.domain.Configuration;
-import com.jhw.module.util.rest_config.core.domain.ConnectionTarget;
-import com.jhw.module.util.rest_config.core.module.RestConfigCoreModule;
-import com.jhw.module.util.rest_config.core.usecase_def.RestConfigUseCase;
+import com.root101.module.util.rest_config.core.domain.Configuration;
+import com.root101.module.util.rest_config.core.domain.ConnectionTarget;
+import com.root101.module.util.rest_config.core.module.RestConfigCoreModule;
+import com.root101.module.util.rest_config.core.usecase_def.RestConfigUseCase;
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;

@@ -1,12 +1,12 @@
-package com.jhw.module.util.rest_config.repo.repo_impl;
+package com.root101.module.util.rest_config.repo.repo_impl;
 
 import com.root101.clean.core.app.services.NotificationHandler;
 import com.root101.clean.core.app.services.NotificationsGeneralType;
 import com.root101.clean.core.domain.services.ResourceHandler;
-import com.jhw.module.util.rest_config.core.domain.Configuration;
+import com.root101.module.util.rest_config.core.domain.Configuration;
 import javax.inject.Inject;
 import com.root101.repo.json.JACKSONRepoGeneral;
-import com.jhw.module.util.rest_config.core.repo_def.RestConfigRepo;
+import com.root101.module.util.rest_config.core.repo_def.RestConfigRepo;
 
 /**
  * Implementacion de la Interfaz {@code LicenceRepo} para manejar el
