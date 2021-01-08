@@ -1,7 +1,7 @@
 package com.jhw.module.util.rest_config.core.usecase_impl;
 
 import com.jhw.module.util.rest_config.core.utils.RestOperationsFactory;
-import com.clean.core.app.usecase.DefaultReadWriteUseCase;
+import com.root101.clean.core.app.usecase.DefaultReadWriteUseCase;
 import com.jhw.module.util.rest_config.core.domain.Configuration;
 import com.jhw.module.util.rest_config.core.domain.ConnectionTarget;
 import com.jhw.module.util.rest_config.core.module.RestConfigCoreModule;
@@ -9,7 +9,7 @@ import java.util.List;
 import com.jhw.module.util.rest_config.core.repo_def.RestConfigRepo;
 import com.jhw.module.util.rest_config.core.usecase_def.RestConfigUseCase;
 import com.jhw.module.util.rest_config.core.utils.OAuth2RestOperationsFactory;
-import com.jhw.utils.others.Red;
+import com.root101.utils.others.Network;
 import java.util.Map;
 import org.springframework.security.oauth2.client.OAuth2RestOperations;
 import org.springframework.web.client.RestOperations;
@@ -76,7 +76,7 @@ public class RestConfigUseCaseImpl extends DefaultReadWriteUseCase<Configuration
     @Override
     public boolean isConnected() {
         try {
-            return Red.isRunning(actual().getIp(), actual().getPortRest());
+            return Network.isRunning(actual().getIp(), actual().getPortRest());
         } catch (Exception e) {
             return false;
         }

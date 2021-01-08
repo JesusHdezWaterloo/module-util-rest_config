@@ -1,6 +1,6 @@
 package com.jhw.module.util.rest_config.ui.module;
 
-import com.clean.core.app.services.NavigationService;
+import com.root101.clean.core.app.services.NavigationService;
 
 /**
  *

@@ -1,15 +1,15 @@
 package com.jhw.module.util.rest_config.ui.module;
 
-import com.clean.core.app.services.ExceptionHandler;
-import com.clean.swing.app.AbstractSwingApplication;
-import com.clean.swing.app.DefaultAbstractSwingMainModule;
-import com.clean.swing.app.RootView;
-import com.clean.swing.app.dashboard.DashBoardSimple;
-import com.clean.swing.app.dashboard.DashboardConstants;
+import com.root101.clean.core.app.services.ExceptionHandler;
+import com.root101.clean.swing.app.AbstractSwingApplication;
+import com.root101.clean.swing.app.DefaultAbstractSwingMainModule;
+import com.root101.clean.swing.app.RootView;
+import com.root101.clean.swing.app.dashboard.DashBoardSimple;
+import com.root101.clean.swing.app.dashboard.DashboardConstants;
 import com.jhw.module.util.rest_config.services.RESTExceptionHandler;
 import com.jhw.module.util.rest_config.services.RestConfigResourceServiceImplementation;
 import com.jhw.module.util.rest_config.ui.connection.ConnectionComponent;
-import com.jhw.swing.material.standards.MaterialIcons;
+import com.root101.swing.material.standards.MaterialIcons;
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 

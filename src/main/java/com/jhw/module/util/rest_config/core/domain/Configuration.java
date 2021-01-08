@@ -1,6 +1,6 @@
 package com.jhw.module.util.rest_config.core.domain;
 
-import com.jhw.utils.clean.EntityDomainObjectValidated;
+import com.root101.utils.clean.EntityDomainObjectValidated;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;

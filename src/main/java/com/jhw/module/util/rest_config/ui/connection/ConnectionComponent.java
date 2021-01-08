@@ -6,16 +6,16 @@
 package com.jhw.module.util.rest_config.ui.connection;
 
 import com.jhw.module.util.rest_config.services.RESTHandler;
-import com.jhw.swing.material.components.container.panel.MaterialPanelBorder;
-import com.jhw.swing.material.components.container.panel._MaterialPanelComponent;
-import com.jhw.swing.material.components.container.panel._PanelGradient;
-import com.jhw.swing.material.components.labels.MaterialLabel;
-import com.jhw.swing.material.components.labels.MaterialLabelsFactory;
-import com.jhw.swing.material.injection.MaterialSwingInjector;
-import com.jhw.swing.material.standards.MaterialColors;
-import com.jhw.swing.material.standards.MaterialFontRoboto;
-import com.jhw.swing.util.interfaces.MaterialComponent;
-import com.jhw.utils.interfaces.Update;
+import com.root101.swing.material.components.container.panel.MaterialPanelBorder;
+import com.root101.swing.material.components.container.panel._MaterialPanelComponent;
+import com.root101.swing.material.components.container.panel._PanelGradient;
+import com.root101.swing.material.components.labels.MaterialLabel;
+import com.root101.swing.material.components.labels.MaterialLabelsFactory;
+import com.root101.swing.material.injection.MaterialSwingInjector;
+import com.root101.swing.material.standards.MaterialColors;
+import com.root101.swing.material.standards.MaterialFontRoboto;
+import com.root101.swing.util.interfaces.MaterialComponent;
+import com.root101.utils.interfaces.Update;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;

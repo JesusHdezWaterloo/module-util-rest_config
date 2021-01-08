@@ -1,6 +1,6 @@
 package com.jhw.module.util.rest_config.core.repo_def;
 
-import com.clean.core.app.repo.ReadWriteRepository;
+import com.root101.clean.core.app.repo.ReadWriteRepository;
 import com.jhw.module.util.rest_config.core.domain.Configuration;
 
 /**

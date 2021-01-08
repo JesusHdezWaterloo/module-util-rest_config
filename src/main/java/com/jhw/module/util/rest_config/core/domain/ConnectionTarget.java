@@ -6,7 +6,7 @@
 package com.jhw.module.util.rest_config.core.domain;
 
 import com.jhw.module.util.rest_config.core.utils.Ipv4;
-import com.jhw.utils.clean.EntityDomainObjectValidated;
+import com.root101.utils.clean.EntityDomainObjectValidated;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Positive;
 

@@ -5,7 +5,7 @@
  */
 package com.jhw.module.util.rest_config;
 
-import com.clean.core.app.services.AuthenticationHandler;
+import com.root101.clean.core.app.services.AuthenticationHandler;
 import com.jhw.module.util.rest_config.services.RESTHandler;
 import java.util.Scanner;
 

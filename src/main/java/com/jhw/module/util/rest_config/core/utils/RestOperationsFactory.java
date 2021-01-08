@@ -7,7 +7,7 @@ package com.jhw.module.util.rest_config.core.utils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jhw.module.util.rest_config.core.usecase_def.RestConfigUseCase;
-import com.jhw.utils.jackson.JACKSON;
+import com.root101.json.jackson.JACKSON;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.client.RestOperations;
 import org.springframework.web.client.RestTemplate;

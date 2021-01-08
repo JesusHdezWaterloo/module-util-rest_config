@@ -1,6 +1,6 @@
 package com.jhw.module.util.rest_config.core.utils;
 
-import com.clean.core.utils.validation.annotations.registers.SizeExactRegister;
+import com.root101.clean.core.utils.validation.annotations.registers.SizeExactRegister;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

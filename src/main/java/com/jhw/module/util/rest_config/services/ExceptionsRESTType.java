@@ -5,7 +5,7 @@
  */
 package com.jhw.module.util.rest_config.services;
 
-import com.clean.core.app.services.ExceptionHandlerServiceFunctional;
+import com.root101.clean.core.app.services.ExceptionHandlerServiceFunctional;
 import org.springframework.web.client.ResourceAccessException;
 
 /**
