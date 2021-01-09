@@ -14,20 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.root101.module.util.rest_config.ui.module;
-
-import com.root101.clean.core.app.services.NavigationService;
+package com.root101.module.util.rest_config.services;
 
 /**
  *
  * @author Root101 (jhernandezb96@gmail.com, +53-5-426-8660)
- * @author JesusHdezWaterloo@Github
  */
-public class RestConfigModuleNavigator implements NavigationService {
+public class ResourceKeys {
 
-    @Override
-    public void navigateTo(String string, Object... os) {
-
-    }
+    public static final String KEY_MODULE_NAME_REST_CONFIG = "com.root101.module.util.rest_config.name";
 
 }

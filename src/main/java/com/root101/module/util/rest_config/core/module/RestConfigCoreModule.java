@@ -20,7 +20,11 @@ import com.root101.clean.core.app.modules.AbstractModule;
 import com.root101.clean.core.app.modules.DefaultAbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
+import com.root101.clean.core.domain.services.ResourceHandler;
+import com.root101.clean.core.exceptions.AlreadyInitModule;
+import com.root101.clean.core.exceptions.NotInitModule;
 import com.root101.module.util.rest_config.repo.module.RestConfigRepoModule;
+import static com.root101.module.util.rest_config.services.ResourceKeys.*;
 
 /**
  *
@@ -35,14 +39,14 @@ public class RestConfigCoreModule extends DefaultAbstractModule {
 
     public static RestConfigCoreModule getInstance() {
         if (INSTANCE == null) {
-            throw new NullPointerException("El modulo de REST-Config no se ha inicializado");
+            throw new NotInitModule(ResourceHandler.getString(KEY_MODULE_NAME_REST_CONFIG));
         }
         return INSTANCE;
     }
 
     public static RestConfigCoreModule init() {
         if (INSTANCE != null) {
-            return INSTANCE;
+            throw new AlreadyInitModule(ResourceHandler.getString(KEY_MODULE_NAME_REST_CONFIG));
         }
         INSTANCE = new RestConfigCoreModule();
         INSTANCE.registerModule(RestConfigRepoModule.init());
